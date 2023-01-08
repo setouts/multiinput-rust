@@ -1,3 +1,5 @@
+use std::fmt;
+
 use devices::{HatSwitch, JoystickState};
 
 /// State of a Key or Button
@@ -100,6 +102,12 @@ pub enum KeyId {
     SemiColon,
     Apostrophe,
     Hash,
+}
+
+impl fmt::Display for KeyId {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
 }
 
 /// Mouse Buttons
